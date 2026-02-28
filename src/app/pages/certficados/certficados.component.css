@@ -44,3 +44,7 @@
     }
   }
 }
+
+.list-certificates {
+  max-width: 672px;
+}
