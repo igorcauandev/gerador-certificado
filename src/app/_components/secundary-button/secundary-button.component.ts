@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './secundary-button.component.css'
 })
 export class SecundaryButtonComponent {
-
+  ngOnInit(): void {
+    console.log('SecundaryButtonComponent initialized');
+  }
 }

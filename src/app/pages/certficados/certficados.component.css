@@ -1,0 +1,46 @@
+.custom-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.custom-p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #6474BB;
+}
+
+.content-titles {
+  height: 60px;
+  gap: 4px;
+}
+
+.custom-card {
+  max-width: 672px;
+  gap: 20px;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  padding: 48px 32px 56px 32px;
+
+  i {
+    font-size: 48px;
+    color: #64748B;
+  }
+
+  .custom-waring-titles {
+
+    h3 {
+      color: #1A2856;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+}

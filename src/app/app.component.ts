@@ -5,6 +5,7 @@ import { PrimaryButtonComponent } from './_components/primary-botton/primary-but
 import { SecundaryButtonComponent } from './_components/secundary-button/secundary-button.component';
 import { ItemCertificadoComponent } from './_components/item-certificado/item-certificado.component';
 import { BaseUiComponent } from './_components/base-ui/base-ui.component';
+import { CertficadosComponent } from './pages/certficados/certficados.component';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,13 @@ import { BaseUiComponent } from './_components/base-ui/base-ui.component';
     PrimaryButtonComponent, 
     SecundaryButtonComponent,
     ItemCertificadoComponent,
-    BaseUiComponent
+    BaseUiComponent,
+    CertficadosComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'gerador-certificado';
 }
