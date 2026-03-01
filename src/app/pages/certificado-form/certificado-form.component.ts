@@ -8,6 +8,7 @@ import { SecundaryButtonComponent } from '../../_components/secundary-button/sec
   templateUrl: './certificado-form.component.html',
   styleUrl: './certificado-form.component.css'
 })
+
 export class CertificadoFormComponent {
 
 }
