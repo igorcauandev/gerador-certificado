@@ -6,6 +6,7 @@ import { SecundaryButtonComponent } from './_components/secundary-button/secunda
 import { ItemCertificadoComponent } from './_components/item-certificado/item-certificado.component';
 import { BaseUiComponent } from './_components/base-ui/base-ui.component';
 import { CertficadosComponent } from './pages/certficados/certficados.component';
+import { CertificadoFormComponent } from './pages/certificado-form/certificado-form.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { CertficadosComponent } from './pages/certficados/certficados.component'
     SecundaryButtonComponent,
     ItemCertificadoComponent,
     BaseUiComponent,
-    CertficadosComponent
+    CertficadosComponent,
+    CertificadoFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
