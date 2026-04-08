@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { CertificadoFormComponent } from '../certificado-form/certificado-form.component';
+
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-certificado',
-  imports: [CertificadoFormComponent, SecundaryButtonComponent],
+  imports: [SecundaryButtonComponent, RouterLink],
   templateUrl: './certificado.component.html',
   styleUrl: './certificado.component.css'
 })
