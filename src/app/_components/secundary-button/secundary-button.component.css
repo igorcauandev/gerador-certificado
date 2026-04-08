@@ -8,6 +8,7 @@
   background: #1A2856;
   cursor: pointer;
   gap: 8px;
+  font-weight: 600;
 
   a {
     text-decoration: none; 
