@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@400;700&display=swap');
+
 .menu-certificado {
   max-width: 800px;
 }
@@ -75,6 +78,7 @@
 }
 
 .nome-aluno {
+  font-family: 'Dancing Script', cursive;
   font-weight: 700;
   font-size: 52px;
   line-height: 80px;
