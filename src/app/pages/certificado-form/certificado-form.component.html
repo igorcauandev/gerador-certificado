@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center flex-column">
+<form #form="ngForm" novalidate class="d-flex align-items-center flex-column">
 
   <div class="text-center content-titles mb-5">
     <h1 class="fw-bold mb-2 custom-title">Geração de Certificados</h1>
@@ -11,21 +11,37 @@
     </h2>
 
     <div class="mb-3 custom-input-group">
-      <label for="nome" class="form-label">Nome</label>
-      <input [(ngModel)]="nome" id="nome" type="text" class="form-control custom-input" placeholder="Nome do Aluno" >
-      
-      <div class="error-message d-flex align-items-center">
-        <i class="ph ph-warning-circle"></i>
-        <p class="m-0">Error message</p>
-      </div>
+
+      <label [ngClass]="{'text-danger': campoInvalido(nomeInput)}" for="nome" class="form-label">Nome</label>
+      <input [(ngModel)]="nome" name="nome" #nomeInput="ngModel" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Nome do Aluno" >
+
+      @if (campoInvalido(nomeInput)) {
+        <div class="error-message d-flex align-items-center">
+          <i class="ph ph-warning-circle"></i>
+          <p class="m-0">O nome do aluno é obrigatório</p>
+        </div>
+      }
     </div>
 
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
-        <label for="atividade" class="form-label">Atividade</label>
-        <input [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Atividade Exercida">
+
+        <label [ngClass]="{'text-danger': campoInvalido(atividadeInput)}" for="atividade" class="form-label">Atividade</label>
+        <input [(ngModel)]="atividade" name="atividade" #atividadeInput="ngModel" required maxlength="50" id="atividade" type="text" class="form-control custom-input" placeholder="Atividade Exercida">
+
+        @if (campoInvalido(atividadeInput)) {
+          <div class="error-message d-flex align-items-center">
+            <i class="ph ph-warning-circle"></i>
+            <p class="m-0">A atividade é obrigatória</p>
+          </div>
+        }
+
       </div>
-      <app-secundary-button></app-secundary-button>
+
+      <app-secundary-button 
+        [ngStyle]="campoInvalido(atividadeInput) ? { marginBottom: '24px' } : {}">
+      </app-secundary-button>
+      
     </div>
 
     <div class="atividade-group"> 
@@ -47,4 +63,4 @@
     </div>
     <app-primary-botton></app-primary-botton>
   </div>
-</div>
+</form>

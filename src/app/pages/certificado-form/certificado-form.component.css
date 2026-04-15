@@ -113,6 +113,6 @@ label {
   vertical-align: middle;
 }
 
-.custom-input-group:has(.error-message) > label {
+.text-danger {
   color: #E95F5F;
 }
