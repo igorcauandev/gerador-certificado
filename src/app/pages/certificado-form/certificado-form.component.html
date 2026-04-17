@@ -13,7 +13,7 @@
     <div class="mb-3 custom-input-group">
 
       <label [ngClass]="{'text-danger': campoInvalido(nomeInput)}" for="nome" class="form-label">Nome</label>
-      <input [(ngModel)]="nome" name="nome" #nomeInput="ngModel" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Nome do Aluno" >
+      <input [(ngModel)]="certificado.nome" name="nome" #nomeInput="ngModel" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Nome do Aluno" >
 
       @if (campoInvalido(nomeInput)) {
         <div class="error-message d-flex align-items-center">
@@ -26,20 +26,24 @@
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
 
-        <label [ngClass]="{'text-danger': campoInvalido(atividadeInput)}" for="atividade" class="form-label">Atividade</label>
+        <label for="atividade" class="form-label">Atividade</label>
         <input [(ngModel)]="atividade" name="atividade" #atividadeInput="ngModel" required maxlength="50" id="atividade" type="text" class="form-control custom-input" placeholder="Atividade Exercida">
 
-        @if (campoInvalido(atividadeInput)) {
+        <!-- @if (campoInvalido(atividadeInput)) {
           <div class="error-message d-flex align-items-center">
             <i class="ph ph-warning-circle"></i>
             <p class="m-0">A atividade é obrigatória</p>
           </div>
-        }
+        } -->
 
       </div>
 
       <app-secundary-button 
-        [ngStyle]="campoInvalido(atividadeInput) ? { marginBottom: '24px' } : {}">
+        (click)="adicionarAtividade()"
+        [disabled]="atividade.length == 0"
+        textButton="Adicionar Atividade"
+        phclass="ph ph-plus"
+        >
       </app-secundary-button>
       
     </div>
@@ -47,20 +51,25 @@
     <div class="atividade-group"> 
       <label class="form-label">Lista de Atividades</label>
       <div class="item-list w-100">
-        @for (item of list_atividades; track $index) {
+        @for (item of certificado.atividades; track $index) {
           <div class="item">
             <span class="item-text">{{ item }}</span>
-            <div class="remove-btn">
+            <div (click)="removerAtividade($index)" class="remove-btn">
               <i class="ph-bold ph-x"></i>
             </div>
           </div>
-          @if ($index + 1 != list_atividades.length) {
+          @if ($index + 1 != certificado.atividades.length) {
             <hr>
           }
         }
       </div>
       
     </div>
-    <app-primary-botton></app-primary-botton>
+    <app-primary-botton
+      (click)="submit()"
+      [disabled]="!formValido()"
+      text="Gerar Certificado"
+      >
+    </app-primary-botton>
   </div>
 </form>
