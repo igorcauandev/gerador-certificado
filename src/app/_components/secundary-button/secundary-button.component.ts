@@ -9,7 +9,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SecundaryButtonComponent {
   @Output() click = new EventEmitter<MouseEvent>();
-  @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() textButton: string = '';
+  @Input() phclass: string = '';
+  @Input() disabled: boolean = false;
 
   handleClick(event: MouseEvent) {
     event.stopPropagation();
@@ -18,6 +20,5 @@ export class SecundaryButtonComponent {
   }
 
   ngOnInit(): void {
-    console.log('SecundaryButtonComponent initialized');
   }
 }

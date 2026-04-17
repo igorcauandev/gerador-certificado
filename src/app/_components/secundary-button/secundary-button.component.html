@@ -1,4 +1,6 @@
-<button class="custom-button d-flex align-items-center ">
-  <i class="ph ph-plus"></i>
-  <a>Botão secundário</a>
+<button [ngStyle]="disabled ? {'opacity': '50%'} : {}" class="custom-button d-flex align-items-center ">
+  @if (phclass) {
+    <i class="{{phclass}}"></i>
+  }
+  {{textButton}}
 </button>
