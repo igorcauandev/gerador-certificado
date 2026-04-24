@@ -40,7 +40,7 @@
 
       <app-secundary-button 
         (click)="adicionarAtividade()"
-        [disabled]="atividade.length == 0"
+        [disabled]="!atividade || atividade.length == 0"
         textButton="Adicionar Atividade"
         phclass="ph ph-plus"
         >
