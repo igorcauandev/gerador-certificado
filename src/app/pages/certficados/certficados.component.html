@@ -4,14 +4,16 @@
     <p class="mb-4 custom-p">Vizualize todos os Certificados Gerados</p>
   </div>
 
-  <!-- <div class="custom-card d-flex align-items-center flex-column w-100">
-    <i class="ph ph-certificate"></i>
-    <div class="custom-waring-titles">
-      <h3 class="fw-bold">Nenhum certificado gerado</h3>
-      <p class="custom-p">Gere certificados para consultar o histórico</p>
+  @if (certificadosList.length == 0) {
+    <div class="custom-card d-flex align-items-center flex-column w-100">
+      <i class="ph ph-certificate"></i>
+      <div class="custom-waring-titles">
+        <h3 class="fw-bold">Nenhum certificado gerado</h3>
+        <p class="custom-p">Gere certificados para consultar o histórico</p>
+      </div>
+      <app-secundary-button routerLink="/certificado/novo" textButton="Gerar Certificado"></app-secundary-button>
     </div>
-    <app-secundary-button routerLink="/certificado/novo" textButton="Gerar Certificado"></app-secundary-button>
-  </div> -->
+  }
 
   <div class="list-certificates w-100">
     <app-item-certificado></app-item-certificado>
