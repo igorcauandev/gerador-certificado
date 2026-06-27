@@ -23,6 +23,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const certificadosJson = localStorage.getItem('certificados');
     this.certificadoService.certificados = certificadosJson ? JSON.parse(certificadosJson) : [];
-    console.log('Certificados carregados:', this.certificadoService.certificados);
   }
 }
